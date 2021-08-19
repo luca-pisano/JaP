@@ -6,5 +6,6 @@ document.addEventListener("submit", function(e){
     let contra = document.forms[0].contrasenia.value
     if ((usuario != "") && (contra != "")){
         window.location.assign('../inicio.html')
+        alert("me quiero morir")
     }
 });
