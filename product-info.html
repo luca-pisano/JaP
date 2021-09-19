@@ -13,26 +13,99 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .checked {color: orange;}
+  </style>
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="my-profile.html" id="perfil"></a>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+  
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item pr-5 pl-5">
+          <a class="nav-link" style="color: aliceblue;" href="inicio.html">Inicio</a>
+        </li>
+        <li class="nav-item pr-5 pl-5">
+          <a class="nav-link" style="color: aliceblue;" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item pr-5 pl-5">
+          <a class="nav-link" style="color: aliceblue;" href="products.html">Productos</a>
+        </li>
+        <li class="nav-item pr-5 pl-5">
+          <a class="nav-link" style="color: aliceblue;" href="sell.html">Vender</a>
+        </li>
+        <li class="nav-item pr-5 pl-5">
+          <a class="nav-link" style="color: aliceblue;" href="cart.html">Mi carrito</a>
+        </li>
+        <li class="nav-item pr-5 pl-5">
+          <a class="nav-link" style="color: aliceblue;" href="my-profile.html" id="perfil"></a>
+        </li>
+      </ul>
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <h1 id="nombre"></h1>
+    <br>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div id= "carousel-inner" class="carousel-inner">
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
+    <br>
+    <br>
+    <dl>
+      <dt>Precio</dt>
+      <dd>
+        <p id="precio"></p>
+      </dd>
+      <dt>Vendidos</dt>
+      <dd>
+        <p id="vendidos"></p>
+      </dd>
+      <dt>Categoría</dt>
+      <dd>
+        <p id="categoria"></p>
+      </dd>
+      <dt>Descripción</dt>
+      <dd>
+        <p id="descripcion"></p>
+      </dd>
+    </dl>
+    <hr class="my-3">
+    <section>
+      <div class="container">
+          <div class="row">
+              <div id="com-list" class="col-sm-5 col-md-6 col-12 pb-4">
+                  <h1>Comentarios</h1>
+              </div>
+              <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+                  <form id="algin-form">
+                      <div class="form-group">
+                          <h4>Deja tu comentario</h4> <label for="message">mensaje</label> <textarea name="msg" id="" msg cols="30" rows="5" class="form-control"></textarea>
+                      </div>
+                      <div class="form-group"> <label for="puntuacion">puntuacion</label> <input id="puntuacion" type="number" min="1" max="5"> </div>
+                      <div class="form-group"> <button type="button" id="post" class="btn" style="background-color: rgb(66, 161, 255);">Publicar comentario</button> </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </section>
   </div>
   <footer class="text-muted">
     <div class="container">
