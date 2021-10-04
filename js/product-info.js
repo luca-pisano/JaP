@@ -41,6 +41,22 @@ function showcomments(){
     }
 }
 
+function showrelated(){
+    for(i of informacion.relatedProducts) {
+        document.getElementById("relacionados").innerHTML += `
+        <div class="card">
+        <img src="`+ productos[i].imgSrc +`" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">`+ productos[i].name +`</h5>
+          <h6 class="card-text">`+ productos[i].currency + ` ` + productos[i].cost +`</h6>
+          <p class="card-text">`+ productos[i].description +`</p>
+          <a href="#" class="btn btn-primary">Ir</a>
+        </div>
+      </div>
+        `
+    }
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -48,9 +64,14 @@ document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
         if(resultObj.status === "ok"){
             informacion = resultObj.data;
-            showinfo()
-        }
-    })
+            getJSONData(PRODUCTS_URL).then(function(resultObj){
+                if(resultObj.status === "ok"){
+                    productos = resultObj.data;
+                    showinfo()
+                    showrelated()
+                }
+        })
+    }})
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
         if(resultObj.status === "ok"){
             comentario = resultObj.data;

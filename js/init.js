@@ -40,11 +40,16 @@ var getJSONData = function(url){
     });
 }
 
+function logoff(){
+  localStorage.removeItem("user")
+  window.location.href = './index.html'
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
   if ((localStorage.getItem("user") != undefined) && (localStorage.getItem("user") != "")){
-    document.getElementById("perfil").innerHTML = localStorage.getItem("user")
+    document.getElementById("dropdownMenuLink").innerHTML = localStorage.getItem("user")
   }
 });
