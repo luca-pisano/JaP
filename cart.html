@@ -71,12 +71,38 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Producto</th>
+          <th>Moneda</th>
+          <th>Precio por unidad</th>
+          <th>Cantidad</th>
+          <th>subtotal</th>
+        </tr>
+      </thead>
+      <tbody id="CartBody">
+      </tbody>
+    </table>
+    <br>
+    <h5 id="subtotal"></h5>
+    <br>
+    <br>
+    <h4>Método de envío</h4>
+    <h5>Dirección</h5>
+    <input type="text" placeholder="calle, número, esquina">
+    <h5>País</h5>
+    <input type="text">
+    <h5>Tipo de envío</h5>
+    <input type="radio" name="envio" id="Premium"><label for="Premium">Premium (2-5 dias) - 15% del subtotal</label> <br>
+    <input type="radio" name="envio" id="Express"><label for="Express">Express (5-8 dias) - 7% del subtotal</label> <br>
+    <input type="radio" name="envio" id="Standard"><label for="Standard">Standard (12-15 dias) - 5% del subtotal</label>
+    <h4>Método de pago</h4>
+    <input type="radio" name="pago" id="tarjeta"><label for="tarjeta">Tarjeta de Crédito</label> <br>
+    <input type="radio" name="pago" id="transferencia"><label for="transferencia">Transferencia bancaria</label>
+    <br>
+    <button class="btn btn-primary">Finalizar Compra</button>
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
