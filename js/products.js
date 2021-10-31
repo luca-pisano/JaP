@@ -13,25 +13,21 @@ function showProducts(){
         if (((minPrice == undefined) || (minPrice != undefined && parseInt(producto.cost) >= minPrice)) &&
             ((maxPrice == undefined) || (maxPrice != undefined && parseInt(producto.cost) <= maxPrice))){
                 HtmlAPegar +=  `
-                <a href="product-info.html" class="list-group-item list-group-item-action">
-                 <div class="row">
-                        <div class="col-3">
-                            <img src="` + producto.imgSrc + `" alt="` + producto.description + `" class="img-thumbnail">
+                <div class="col-md-4">
+                    <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                        <img src="`+ producto.imgSrc +`" class="card-img-top">
+                        <div class="card-body">
+                        <h5 class="card-title">`+ producto.name +`</h5>
+                        <h6 class="card-subtitle mb-2">`+ producto.currency +` `+ producto.cost +`</h6>
+                        <p class="card-text">`+ producto.description +`</p>
+                        <p class="card-text text-muted">`+ producto.soldCount +` unidades vendidas</p>
                         </div>
-                     <div class="col">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h4 class="mb-1">`+ producto.name +`</h4>
-                                <h6>`+ producto.currency + ` ` + producto.cost + `</h6>
-                            </div>
-                            <p class="mb-1">` + producto.description + `</p>
-                            <small class="text-muted"> ya se vendieron ` + producto.soldCount + ` unidades de este producto </small>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
                 `
             }
     }
-    document.getElementById("cat-list-container").innerHTML = HtmlAPegar;
+    document.getElementById("append").innerHTML = HtmlAPegar;
 }
 
 function sortProducts(criteria, array){
