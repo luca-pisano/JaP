@@ -86,13 +86,13 @@ document.getElementById("transferencia").addEventListener("change", function(){
     document.getElementById("cuenta").disabled = false;
    
     document.getElementById("TipoPago").innerHTML = "Método Seleccionado: Transferencia bancaria"
-   })
+})
 
-   document.getElementById("direccion").addEventListener("change", function(){
-        Envio = (document.getElementById("direccion").value != "") && (document.getElementById("pais").value != "")
-   })
+document.getElementById("direccion").addEventListener("change", function(){
+    Envio = (document.getElementById("direccion").value != "") && (document.getElementById("pais").value != "")
+})
 
-   document.getElementById("pais").addEventListener("change", function(){
+document.getElementById("pais").addEventListener("change", function(){
     Envio = (document.getElementById("direccion").value != "") && (document.getElementById("pais").value != "")
 })
 
